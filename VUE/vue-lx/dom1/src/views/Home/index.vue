@@ -1,35 +1,22 @@
-<!--  -->
 <template>
-    <div class='wrap'>
+    <div class="wrap"> 
         <div>
             <router-view></router-view>
         </div>
         <footer>
-            <router-link to='/home/timeline' tag='span'>
-            <i class="iconfont iconwangluo"></i>
-                <span>圈子</span>
+            <router-link to="/home/timeline" tag="span">
+                <i class="iconfont iconwangluo"></i>
+                <span> 圈子</span>    
             </router-link>
-            <router-link to='/home/my' tag='span'>
-              <i class="iconfont iconnanhai"></i>
-                <span>我的</span>
+            <router-link to="/home/my" tag="span">
+                <i class="iconfont iconnanhai"></i>
+                <span> 我的</span>
             </router-link>
         </footer>
     </div>
 </template>
 
-<script>
-export default {
-  name:'',
-  data () {
-    return {
-
-    };
-  },
-
-}
-
-</script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .wrap{
     display: flex;
     height: 100%;

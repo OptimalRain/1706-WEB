@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '../views/Home/index.vue'
+// 一级路由
+import Home from '../views/home/index.vue'
+import Login from '../views/login.vue'
+import Register from '../views/register.vue'
 
-import Timeline from '../views/Home/timeline'
-import My from '../views/Home/my'
-import Login from '../views/login/login.vue'
-import Register from '../views/login/register'
+// 二级路由
+import Timeline from '../views/home/timeline'
+import My from '../views/home/my'
 
 Vue.use(VueRouter)
 
@@ -57,6 +59,14 @@ const routes = [
       path: '/comment/send',  //发出的评论
       component: null
     }]
+  },
+  {
+    path: '/about',
+    name: 'about',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
 

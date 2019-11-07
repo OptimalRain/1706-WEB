@@ -34,20 +34,20 @@ export default {
       btn(){
           location.href='/home/timeline'
       },
-       async login(){
-            let {userName, userPwd} = this;
-            let result = await login({userName, userPwd});
-            console.log('result...', result);
-            if (result && result.data.code === 1){
-                // 登陆完成，执行后续跳转逻辑
-            }
-            alert(result.data.msg);
-        },
-        checkUserName(){
-            if (!/\w{3, 20}/.test(this.userName)){
-                alert('请输入正确的用户名')
-            }
-        }
+    //    async login(){
+    //         let {userName, userPwd} = this;
+    //         let result = await login({userName, userPwd});
+    //         console.log('result...', result);
+    //         if (result && result.data.code === 1){
+    //             // 登陆完成，执行后续跳转逻辑
+    //         }
+    //         alert(result.data.msg);
+    //     },
+    //     checkUserName(){
+    //         if (!/\w{3, 20}/.test(this.userName)){
+    //             alert('请输入正确的用户名')
+    //         }
+    //     }
   }
 }
 

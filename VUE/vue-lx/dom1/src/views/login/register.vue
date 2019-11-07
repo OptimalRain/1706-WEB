@@ -30,16 +30,16 @@ export default {
       btn(){
           location.href='/home/timeline'
       },
-       async register(){
-            let {userName, userPwd} = this;
-            let result = await register({userName, userPwd})
-            // console.log('result...', result);
-            if (result && result.data.code === 0){
-                alert(result.data.msg)
-            }else{
-                window.history.back();
-            }
-        }
+    //    async register(){
+    //         let {userName, userPwd} = this;
+    //         let result = await register({userName, userPwd})
+    //         // console.log('result...', result);
+    //         if (result && result.data.code === 0){
+    //             alert(result.data.msg)
+    //         }else{
+    //             window.history.back();
+    //         }
+    //     }
   }
 }
 

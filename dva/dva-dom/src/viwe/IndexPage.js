@@ -1,45 +1,43 @@
 import React from 'react';
 import { connect } from 'dva';
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 // import styles from './IndexPage.css';
+const { SubMenu } = Menu;
+const { Header, Content, Sider } = Layout;
+class IndexPage extends React.Component {
 
-class IndexPage extends React.Component{
-  
-  render(){
-    console.log(this.props)
-    let {changeNum}=this.props
+  render() {
     return <div>
-      
-      <button onClick={()=>{changeNum('+')}}>+</button>
-        <span>{this.props.num}</span>
-      <button onClick={()=>changeNum('-')}>-</button>
-    </div>
+      <Layout>
+        <Header className="header" style={{color:"#fff"}}>
+         头部
+        </Header>
+        <Layout>
+          <Sider width={200} style={{ background: '#fff' }}>
+            侧边栏
+          </Sider>
+          <Layout style={{ padding: '0 24px 24px' }}>
+            <Breadcrumb style={{ margin: '16px 0' }}>
+              <Breadcrumb.Item>Home</Breadcrumb.Item>
+              <Breadcrumb.Item>List</Breadcrumb.Item>
+              <Breadcrumb.Item>App</Breadcrumb.Item>
+            </Breadcrumb>
+            <Content
+              style={{
+                background: '#fff',
+                padding: 24,
+                margin: 0,
+                minHeight: 280,
+              }}
+            >
+              Content
+        </Content>
+          </Layout>
+        </Layout>
+      </Layout>,
+   </div>
   }
 }
-//props的类型检测
-IndexPage.propTypes = {
-  num:Number
-};
-//props的默认值
-IndexPage.defaultProps={
-  num:10000
-}
-
-const mapStateToPorps=state=>{
-  console.log('state...',state)
-  return {
-    num:state.num.num
-  }
-}
-
-const mapDispatchToProps=dispatch=>{
-  console.log(dispatch)
-  return {
-    changeNum:type=>dispatch({
-      type:'num/changeNum',
-      payload:{type}
-    })
-  }
-}
 
 
-export default connect(mapStateToPorps,mapDispatchToProps)(IndexPage);
+export default connect()(IndexPage);

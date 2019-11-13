@@ -1,0 +1,2 @@
+1.dva new 项目名 //创建项目
+2.npm run start //起服务

@@ -1,4 +1,4 @@
-import {govList} from '@/services'
+import {govList, addGov} from '@/services'
 
 export default {
   // 命名空间
@@ -20,6 +20,20 @@ export default {
         type: 'changeList',
         payload: res.data.list
       })
+    },
+
+    * addGov({payload}, {call, put, select}) {
+      // 通过select拿到所有的state
+      let {type} = yield select(state=>state.gov);
+      console.log('type...', type);
+
+      // 通过type判断调哪一个接口
+      if (type === 'new'){
+        let res = yield call(addGov, payload);
+        console.log('res...', res);
+      }else if(type === 'edit'){
+
+      }
     }
   },
 
